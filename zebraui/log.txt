@@ -1,0 +1,12 @@
+
+
+
+2013/1/30 15:02
+==============================
+去掉了UIComponent的 __preferWidth,_preferHeight
+修改了ListBox 的 width height
+
+
+
+
+About: 由于长时间反复的修改和 不一直在做ui 所以log很有必要。现日起做一个手动的log,以后可能做一个air的log工具。

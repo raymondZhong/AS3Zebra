@@ -1,0 +1,57 @@
+
+2013/2/4 17:01
+XmlMap   "false"&&"true" 字符串转换Boolean 修正 
+加入IsoWorld 控制 isoScene 的位置和显示范围和层次
+修正EmptyLayout的 updateAlign方法。
+
+=========================================================
+
+
+2013/2/1 21:59
+修正png 图片的遮挡
+
+=========================================================
+2013/1/17
+Iso 编辑器视图对象错误 修正
+Iso 加入显示对象不可见
+
+测试Game.Content.addView() && upDateView()   //OK
+======================================================
+2013/1/12
+AssetLoader 加入替换loadermax完成。
+AssetLoadQueue 队列加载
+后面加入 每个assetloader的管理。
+GameAsset.load();
+
+加载完成后得到一个 GameAssetInfo
+
+
+======================================================
+2013/1/11
+
+去掉 WatchGameContentEvent 替换 DirectEvent
+
+
+Game 
+  loader 加载器  不在使用第三方的loadermax
+
+ GameLoaderQueue  
+ 
+ 
+ GameLoader 载入的资源放入GameResource
+ 
+ GameLoader.addImage()
+ GameLoader.addSWF()
+ GameLoader.addXML()
+ GameLoader.addData()
+ 
+ GameLoader.getImage()
+ 
+ GameContext.View
+ GameContext.Model
+ GameContext.Texture
+ GameContext.Object
+ 
+ 
+
+ 

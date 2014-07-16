@@ -1,0 +1,34 @@
+2013/1/30 17:09
+===============================================
+listbox  拖动内容滚动条也动.
+
+
+===============================================
+2013/1/22 18:07
+form表单
+toolbar
+Alert
+=> message && window
+
+
+
+
+The <s:BorderContainer> tag inherits all the tag attributes of its superclass, and adds the following tag attributes:
+
+  <s:BorderContainer
+    Properties
+    backgroundFill="null"
+    borderStroke="null"
+ 
+    Styles
+    backgroundImage="undefined"
+    backgroundImageFillMode="scale"
+    borderAlpha="1.0"
+    borderColor="0xB7BABC"
+    borderStyle="solid"
+    borderVisible="true"
+    borderWeight="1"
+    cornerRadius="0"
+    dropShadowVisible="false"
+  />
+  

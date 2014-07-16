@@ -1,0 +1,120 @@
+package zebra.plugs.mobile.display
+{
+	import starling.display.DisplayObject;
+	import starling.display.Image;
+	import starling.display.Sprite;
+	import starling.textures.Texture;
+	import starling.utils.AssetManager;
+	import zebra.Game;
+	import zebra.plugs.mobile.MobileConstants;
+	
+	public class MobileRoot extends Sprite
+	{
+		private static var sAssets:AssetManager;
+		public var  backgroundImage:Image;
+		
+		public var container:Sprite
+		
+		public function MobileRoot()
+		{
+			container = new Sprite();
+			Game.Content.addView(this);
+		}
+		
+		public function  showScreenContainer(target:DisplayObject):void {
+			removeScreenContainer();
+			container.addChild(target);
+		}	
+		
+		public function removeScreenContainer():void {
+			for (var i:int = 0; i < container.numChildren; i++) 
+			{
+				 container.getChildAt(i).dispose();
+			}
+			container.removeChildren();
+		}
+		
+		
+		public function removeBackgroundImage():void {
+			removeChild(backgroundImage);
+		}
+		
+		/**
+		 * 初始化游戏资源
+		 * @param	background
+		 * @param	assets
+		 */
+		/*public function initialize(background:Texture, assets:AssetManager):void
+		{
+			sAssets = assets;
+			backgroundImage = new Image(background)
+			addChild(backgroundImage);
+			addChild(container);
+			assets.loadQueue(assetloadHandler);
+		}*/
+		public function initialize(background:Texture):void
+		{
+			//sAssets = assets;
+			backgroundImage = new Image(background);
+			backgroundImage.width =  MobileConstants.deviceViewPort.width;
+			backgroundImage.height =  MobileConstants.deviceViewPort.height;
+			addChild(backgroundImage);
+			addChild(container);
+			
+			
+			
+			
+			
+			
+			//trace(this.width, this.height, "=============");
+			 //this.width = MobileConstants.designViewPort.width;
+			//   this.height = MobileConstants.designViewPort.height;
+			trace(MobileConstants.designViewPort,MobileConstants.deviceViewPort)
+			// this.width = MobileConstants.deviceViewPort.width;
+			// this.height = MobileConstants.deviceViewPort.height;
+			
+			this.scaleX = MobileConstants.deviceViewPort.width / MobileConstants.designViewPort.width;
+			//this.scaleY = this.scaleX;
+			this.scaleY = MobileConstants.deviceViewPort.height / MobileConstants.designViewPort.height;
+			
+			MobileConstants.scaleX = MobileConstants.designViewPort.width/MobileConstants.deviceViewPort.width;
+			MobileConstants.scaleY = MobileConstants.designViewPort.height/MobileConstants.deviceViewPort.height;
+			//MobileConstants.scaleY = MobileConstants.scaleX;
+			
+			//MobileConstants.scaleX = this.scaleX;
+			//MobileConstants.scaleY = this.scaleY;
+			
+			//this.scaleX =1.5
+			//this.scaleY = 1.5
+			
+			//this.scaleX = MobileConstants.designViewPort.width/MobileConstants.deviceViewPort.width;
+			//this.scaleY = MobileConstants.designViewPort.height/ MobileConstants.deviceViewPort.height;
+			//trace(this.width, this.height, "=============");
+			 
+			
+			startGame();
+			//assets.loadQueue(assetloadHandler);
+		}
+	
+		//初始化资源加载进度
+		protected function assetloadHandler(ratio:Number):void {
+			     // loading
+				 trace("loading", ratio);
+                 if (ratio == 1.0){
+					startGame();
+				 }
+		}
+		
+		protected function startGame():void
+		{
+			
+		}
+		
+		public  function get assets():AssetManager
+		{
+			return sAssets;
+		}
+		
+	}
+
+}
